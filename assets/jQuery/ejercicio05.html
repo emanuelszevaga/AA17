@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Ejercicio 5</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <style>
+            table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+            }
+            table {
+            width: 40%;
+            margin: 20px auto;
+            cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Hace click en las filas de la Tabla 1:</h1>
+
+        <table id="tabla1">
+            <caption>Tabla 1</caption>
+            <tbody>
+            <tr><td>T1 - Fila 1</td><td>Dato A</td></tr>
+            <tr><td>T1 - Fila 2</td><td>Dato B</td></tr>
+            <tr><td>T1 - Fila 3</td><td>Dato C</td></tr>
+            </tbody>
+        </table>
+
+        <table id="tabla2">
+            <caption>Tabla 2</caption>
+            <tbody>
+            <tr><td>T2 - Fila 1</td><td>Dato X</td></tr>
+            <tr><td>T2 - Fila 2</td><td>Dato Y</td></tr>
+            <tr><td>T2 - Fila 3</td><td>Dato Z</td></tr>
+            </tbody>
+        </table>
+
+        <script>
+            $(document).ready(function() {
+            // Usa el selector CSS: ID (#tabla1) seguido del elemento tipo (tr). Selecciona todas las filas (tr) que estén dentro de la tabla con ID "tabla1".
+            $('#tabla1 tr').click(function() {
+                // Usa $(this) para referirSE a la fila específica que fue clickeada. Cambia DE color de fondo.
+                $(this).css('background-color', '#c8e6c9'); // Un tono verde pastel
+            });
+        });
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Ejercicio 6</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <style>
+            .noticia {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            }
+            h2 {
+            color: #00796b; 
+            }
+            .descripcion-noticia {
+            font-size: 16px; 
+            transition: font-size 0.3s; 
+            }
+            button {
+            padding: 10px 15px;
+            margin-right: 10px;
+            background-color: #4db6ac;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+            }
+            button:hover {
+            background-color: #26a69a;
+            }
+        </style>
+    </head>
+    <body>
+
+    <h1>Control de Fuente de Noticias</h1>
+    <p>Elegí el tamaño que queiras</p>
+
+    <button id="btn-chico">Fuente Chica</button>
+    <button id="btn-mediano">Fuente Mediana</button>
+    <button id="btn-grande">Fuente Grande</button>
+
+    <hr>
+
+    <div class="noticia">
+        <h2>Noticia 1: Avances Tecnológicos</h2>
+        <div class="descripcion-noticia">
+        Científicos han presentado un nuevo chip que promete cuadriplicar la velocidad de procesamiento de los dispositivos móviles actuales. Este avance podría revolucionar la industria.
+        </div>
+    </div>
+
+    <div class="noticia">
+        <h2>Noticia 2: Descubrimiento Arqueológico</h2>
+        <div class="descripcion-noticia">
+        Se ha encontrado una tumba intacta de la época romana en el sur de Italia. Los arqueólogos esperan que contenga información clave sobre la vida cotidiana de hace 2000 años.
+        </div>
+    </div>
+
+    <div class="noticia">
+        <h2>Noticia 3: Deporte Local</h2>
+        <div class="descripcion-noticia">
+        El equipo de fútbol local "Los Halcones" se coronó campeón de la liga regional tras una emocionante final decidida en los últimos minutos del partido.
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+
+            $('#btn-chico').click(function() {
+                // Selecciona todos los elementos con la clase .descripcion-noticia y cambiamos el tamaño
+                $('.descripcion-noticia').css('font-size', '12px');
+            });
+
+            $('#btn-mediano').click(function() {
+                // Selecciona todos los elementos con la clase .descripcion-noticia y cambiamos el tamaño
+                $('.descripcion-noticia').css('font-size', '16px'); 
+            });
+
+            $('#btn-grande').click(function() {
+                // Seleccionam todos los elementos con la clase .descripcion-noticia y cambiamos el tamaño
+                $('.descripcion-noticia').css('font-size', '20px');
+            });
+        });
+    </script>
+
+    </body>
+</html>

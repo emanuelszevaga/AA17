@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Ejercicio 11</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                padding: 20px;
+            }
+            strong {
+                color: #b71c1c; 
+                cursor: pointer;
+                font-size: 1.1em;
+                border-bottom: 2px dashed #b71c1c;
+                transition: all 0.3s;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h1>Hace click en las palabras en <strong>negrita</strong> para ocultarlas:</h1>
+        
+        <p>
+            Esta frase contiene algunas palabras que son <strong>importantes</strong> y que queremos que <strong>desaparezcan</strong> cuando el usuario haga click sobre ellas. 
+            Es un ejemplo de cómo jQuery nos permite controlar el <strong>comportamiento</strong> de
+            los elementos <strong>HTML</strong> de forma <strong>dinámica</strong>.
+        </p>
+        
+        <script>
+            $(document).ready(function() {
+
+                // Selecciona todos los elementos de tipo 'strong'
+                $('strong').click(function() {
+                    
+                    // Usa $(this) para referirse al elemento fuerte específico que fue clickeado.
+                    // Aplica el método .hide() para ocultarlo
+                    $(this).hide(400); 
+                });
+            });
+        </script>
+
+    </body>
+</html>

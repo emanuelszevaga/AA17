@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Ejercicio 12</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <style>
+            table {
+            width: 300px;
+            margin: 30px auto;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            td {
+            border: 1px solid #607d8b; 
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #eceff1; 
+            transition: background-color 0.4s; 
+            font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h1>Tabla de Colores</h1>
+        <p>Pasa el mouse sobre las celdas para cambiar el color</p>
+        
+        <table id="mi-tabla">
+            <tr>
+            <td>Celda A1</td>
+            <td>Celda A2</td>
+            </tr>
+            <tr>
+            <td>Celda B1</td>
+            <td>Celda B2</td>
+            </tr>
+        </table>
+
+        <script>
+            $(document).ready(function() {
+                // Selecciona todas las celdas (td) dentro de la tabla
+                $('#mi-tabla td').mouseover(function() {
+                    
+                    // Definine un color aleatorio 
+                    const colores = ['#ffcdd2', '#f8bbd0', '#e1bee7', '#c5cae9', '#bbdefb', '#b3e5fc', '#b2dfdb', '#c8e6c9', '#fff9c4', '#ffecb3'];
+                    const colorElegido = colores[Math.floor(Math.random() * colores.length)];
+                    
+                    // Usa $(this) para referirse a la celda específica que activó el evento
+                    $(this).css('background-color', colorElegido);
+                });
+            });
+        </script>
+
+    </body>
+</html>

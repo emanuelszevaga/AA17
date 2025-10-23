@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Ejercicio 8</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <style>
+            button {
+                padding: 10px 15px;
+                margin-right: 10px;
+                background-color: #64b5f6; /
+                border: none;
+                color: white;
+                cursor: pointer;
+                border-radius: 4px;
+            }
+            button:hover {
+                background-color: #42a5f5;
+            }
+            #enlace {
+                display: block;
+                margin-top: 30px;
+                font-size: 1.2em;
+                color: #0d47a1; 
+                text-decoration: none;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Control de Hipervínculo</h1>
+
+        <a id="enlace" href="">Hace click en un botón.</a>
+
+        <hr>
+
+        <button id="btn-google">Google</button>
+        <button id="btn-wiki">Wikipedia</button>
+        <button id="btn-vacio">Eliminar Destino</button>
+
+        <script>
+            $(document).ready(function() {
+                // Referencia al hipervínculo, para no repetir la selección
+                const $enlace = $('#enlace');
+
+                // Botón para google
+                $('#btn-google').click(function() {
+                    // Fija el atributo href y le da un valor con attr(propiedad, valor)
+                    $enlace.attr('href', 'https://www.google.com');
+                    // Actualiza el texto del enlace
+                    $enlace.text('Ir a Google');
+                });
+
+                // Botón para wikipedia
+                $('#btn-wiki').click(function() {
+                    // Fija el atributo href con attr(propiedad, valor)
+                    $enlace.attr('href', 'https://es.wikipedia.org');
+                    // Actualiza el texto del enlace
+                    $enlace.text('Ir a Wikipedia');
+                });
+
+                // Botón para eliminar el destino
+                $('#btn-vacio').click(function() {
+                    // Remueve el atributo href completamente usando removeAttr()
+                    $enlace.removeAttr('href');
+                    // Actualiza el texto para indicar que está inactivo
+                    $enlace.text('Destino Eliminado (Enlace inactivo)');
+                    
+                });
+            });
+        </script>
+    </body>
+</html>

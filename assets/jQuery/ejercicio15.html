@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Ejercicio 15</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <style>
+            :root {
+                --color-base: #ffb74d;      
+                --color-presionado: #f4511e;
+            }
+            
+            button {
+                padding: 15px 30px;
+                margin: 20px;
+                font-size: 1.1em;
+                background-color: var(--color-base);
+                border: none;
+                color: white;
+                cursor: pointer;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+                transition: background-color 0.1s; 
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Botones con Efecto "Presionado"</h1>
+        <p>Mantenga presionado el click del mouse sobre estos botones.</p>
+        
+        <button id="btn1">Botón Uno</button>
+        <button id="btn2">Botón Dos</button>
+
+        <script>
+            $(document).ready(function() {
+
+            // Selecciona ambos botones usando un selector de múltiples IDs
+            const $botones = $('#btn1, #btn2');
+            
+            // Los colores se toman de las variables CSS 
+            const COLOR_BASE = '#ffb74d';
+            const COLOR_PRESIONADO = '#f4511e';
+            
+            // mousedown: El botón del mouse es presionado
+            $botones.mousedown(function() {
+                $(this).css('background-color', COLOR_PRESIONADO);
+                $(this).text('Presionado');
+            });
+            
+            // mouseup: El botón del mouse es liberado
+            $botones.mouseup(function() {
+                // Restaura el color al valor original.
+                $(this).css('background-color', COLOR_BASE);
+                $(this).text('Liberado');
+            });
+        });
+        </script>
+
+    </body>
+</html>

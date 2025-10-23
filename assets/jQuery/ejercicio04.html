@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <title>Ejercicio 4</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <style>
+            ul {
+                list-style-type: none;
+                padding: 0;
+            }
+            li {
+                margin: 10px 0;
+                padding: 10px;
+                background-color: #e0f2f1; 
+                border: 1px solid #004d40;
+                cursor: pointer; 
+                transition: background-color 0.3s;
+            }
+            li:hover {
+                background-color: #b2dfdb;
+            }
+        </style>
+    </head>
+    <body>
+
+    <h1>Hace click en los elementos para ocultarlos:</h1>
+
+    <ul id="lista">
+        <li>Elemento de Lista 1</li>
+        <li>Elemento de Lista 2</li>
+        <li>Elemento de Lista 3</li>
+        <li>Elemento de Lista 4</li>
+    </ul>
+
+    <script>
+        $(document).ready(function() {
+            // Selecciona todos los elementos li dentro de la lista.
+            $('#lista li').click(function() {
+                
+                // Usa $(this) para referirnos específicamente al <li> que fue clickeado.
+                // Aplica el método .hide() para ocultarlo con una animación simple.
+                $(this).hide(500); 
+                });
+            });
+    </script>
+
+    </body>
+</html>

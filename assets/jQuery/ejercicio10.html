@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Ejercicio 10</title>
+        <meta charset="UTF-8">
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+                padding: 20px;
+            }
+            button {
+                padding: 10px 15px;
+                margin: 10px;
+                background-color: #ff9800; /* Naranja */
+                border: none;
+                color: white;
+                cursor: pointer;
+                border-radius: 4px;
+            }
+            button:hover {
+                background-color: #fb8c00;
+            }
+        </style>
+    </head>
+    <body>
+
+    <h1>Visualizar HTML Interno</h1>
+    <p>Presiona un botón para ver el código HTML interno de cada sección.</p>
+
+    <button id="btn-head">Mostrar HTML de &lt;head&gt;</button>
+    <button id="btn-body">Mostrar HTML de &lt;body&gt;</button>
+
+    <script>
+        $(document).ready(function() {
+            // Botón para mostrar el HTML del <head>
+            $('#btn-head').click(function() {
+                // Selecciona el elemento 'head' y usamos .html() para obtener todo su contenido interno
+                const htmlHead = $('head').html();
+                
+                // Muestra el contenido en un alert. Usamos .slice(0, 200) para no saturar el alert
+                alert("Contenido HTML del HEAD (primeros 200 caracteres):\n\n" + htmlHead.slice(0, 200) + '...');
+            });
+
+            // Botón para mostrar el HTML del <body>
+            $('#btn-body').click(function() {
+                // Selecciona el elemento 'body' y usamos .html() para obtener todo su contenido interno
+                const htmlBody = $('body').html();
+                
+                // Muestra el contenido en un alert. Usamos .slice(0, 200)
+                alert("Contenido HTML del BODY (primeros 200 caracteres):\n\n" + htmlBody.slice(0, 200) + '...');
+            });
+        });
+    </script>
+
+    </body>
+</html>

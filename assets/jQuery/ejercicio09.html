@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Ejercicio 9</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <style>
+            table {
+                width: 50%;
+                margin: 20px auto;
+                border-collapse: collapse;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            th, td {
+                border: 1px solid #ddd;
+                padding: 10px;
+                text-align: left;
+            }
+            
+            .estilo-encabezado {
+                    background-color: #388e3c; /* Verde oscuro */
+                    color: white;
+                    font-weight: bold;
+            }
+            
+            .estilo-cuerpo {
+                background-color: #e8f5e9; /* Verde muy claro */
+                color: #333;
+            }
+            
+            button {
+                padding: 10px 15px;
+                margin-right: 10px;
+                background-color: #a5d6a7;
+                border: none;
+                color: black;
+                cursor: pointer;
+                border-radius: 4px;
+            }
+            button:hover {
+                background-color: #81c784;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Control de estilos de tabla</h1>
+
+        <button id="btn-aplicar">Aplicar Estilos</button>
+        <button id="btn-quitar">Quitar Estilos</button>
+
+        <hr>
+
+        <table id="mi-tabla">
+            <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Ciudad</th>
+            </tr>
+            </thead>
+            
+            <tbody>
+            <tr><td>Emanuel Szevaga</td><td>22</td><td>Posadas</td></tr>
+            <tr><td>Lionel Messi</td><td>38</td><td><Ri:a>Rosario</Ri:a></td></tr>
+            <tr><td>Susana Gimenez</td><td>81</td><td>Buenos Aires</td></tr>
+            </tbody>
+        </table>
+
+        <script>
+            $(document).ready(function() {
+                // Nombres de las clases CSS 
+                const CLASE_HEAD = 'estilo-encabezado';
+                const CLASE_BODY = 'estilo-cuerpo';
+                
+                // Selectores de las partes de la tabla
+                const $thead = $('#mi-tabla thead');
+                const $tbody = $('#mi-tabla tbody');
+
+                // Botón para aplicar estilos
+                $('#btn-aplicar').click(function() {
+                    // Aplicam la clase al thead
+                    $thead.addClass(CLASE_HEAD);
+                    // Aplica la clase al tbody
+                    $tbody.addClass(CLASE_BODY);
+                });
+
+                // Botón para quitar estilos
+                $('#btn-quitar').click(function() {
+                    // Elimina la clase del thead
+                    $thead.removeClass(CLASE_HEAD);
+                    // Elimina la clase del tbody
+                    $tbody.removeClass(CLASE_BODY);
+                });
+            });
+        </script>
+    </body>
+</html>

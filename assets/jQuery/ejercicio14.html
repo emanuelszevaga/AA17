@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Ejercicio 14</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <style>
+            #contenedor {
+                width: 200px;
+                height: 200px;
+                background-color: #f1f8e9; 
+                border: 3px dashed #388e3c; 
+                margin: 30px auto;
+                text-align: center;
+                line-height: 200px; 
+                font-weight: bold;
+                color: #333;
+            }
+            #coordenadas {
+                text-align: center;
+                margin-top: 20px;
+                font-size: 1.2em;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Rastreador de Mouse</h1>
+
+        <div id="coordenadas">
+            Move el mouse sobre el cuadro de abajo
+        </div>
+
+        <div id="contenedor">
+            Pasa el mouse aca (200x200px)
+        </div>
+
+        <script> 
+            $(document).ready(function() {
+                const $contenedor = $('#contenedor');
+                const $coordenadas = $('#coordenadas');
+                
+                // mousemove (Se dispara continuamente mientras el mouse se mueve)
+                $contenedor.mousemove(function(evento) {
+                    // evento.offsetX: Coordenada X relativa al borde del elemento.
+                    // evento.offsetY: Coordenada Y relativa al borde del elemento.
+                    
+                    const x = evento.offsetX;
+                    const y = evento.offsetY;
+                    
+                    $coordenadas.html(`
+                    Coordenadas: <strong>X: ${x}</strong> | <strong>Y: ${y}</strong>
+                    `);
+                });
+            
+                // mouseenter (Se dispara una vez al entrar)
+                $contenedor.mouseenter(function() {
+                    $contenedor.text('Rastreando...');
+                });
+                
+                // mouseleave (Se dispara una vez al salir)
+                $contenedor.mouseleave(function() {
+                    // Restablece el mensaje de coordenadas y el texto del div
+                    $coordenadas.html(`
+                    <span style="color: red;">Mouse fuera del área</span>
+                    `);
+                    $contenedor.text('Pasa el mouse por aca');
+                });
+            });
+        </script>
+
+    </body>
+</html>

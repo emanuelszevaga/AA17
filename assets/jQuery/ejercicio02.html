@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Ejercicio 2</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    </head>
+    <body>
+        <h1>Hace click en los párrafos:</h1>
+        <p id="parrafo1">Primer párrafo. Clickea acá</p>
+        <p>Segundo párrafo. Clickea acá</p>
+
+        <script>
+            $(document).ready(function() {
+                // Captura el evento click solo del elemento con el ID "parrafo1"
+                $('#parrafo1').click(function() {
+                    // Al hacer click, cambia el texto del párrafo como confirmación
+                    $(this).text("Hiciste click en el primer párrafo!");
+                });
+            });
+        </script>
+
+    </body>
+</html>
